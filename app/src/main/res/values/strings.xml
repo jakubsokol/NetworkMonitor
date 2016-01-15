@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Network Monitorr</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="signal_strength">Poziom odbieranego sygnału:</string>
+    <string name="signal_strength_dbm"></string>
+    <string name="operator_name">Nazwa operatora:</string>
+    <string name="operator_name_value"></string>
+    <string name="network_type">Typ sieci komórkowej:</string>
+    <string name="network_type_value"></string>
+    <string name="imei_1">IMEI 1</string>
+</resources>
