@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -63,27 +64,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/dual_sim_value"
-        android:layout_alignParentStart="true"
+        android:id="@+id/imei_1_value"
+        android:layout_below="@+id/textView"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/network_type_value" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/imei_1"
-        android:id="@+id/imei_1"
-        android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/imei_1_value"
-        android:layout_below="@+id/imei_1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/imei_1"
+        android:id="@+id/textView"
+        android:layout_below="@+id/network_type_value"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/operator_name_value" />
+        android:layout_alignEnd="@+id/imei_1_value" />
 
 </RelativeLayout>

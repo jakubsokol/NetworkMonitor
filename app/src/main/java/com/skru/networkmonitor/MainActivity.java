@@ -37,12 +37,10 @@ public class MainActivity extends Activity {
 
         telephon_manager_1.listen(signal_listener1, SignalPhoneStateListener1.LISTEN_SIGNAL_STRENGTHS);
         telephon_manager_1.listen(network_listener1, NetworkPhoneStateListener1.LISTEN_DATA_CONNECTION_STATE);
-
-
-
+        telephon_manager_1.listen(network_listener1,NetworkPhoneStateListener1.LISTEN_SERVICE_STATE);
 
         operator_name_value.setText(telephon_manager_1.getNetworkOperatorName());
-
+        imei_1_value.setText(telephon_manager_1.getDeviceId());
     }
 
     @Override
@@ -90,7 +88,7 @@ public class MainActivity extends Activity {
         }
 
         public void onDataConnectionStateChanged(int state, int networkType) {
-            String NetTypeStr = "";
+            String NetTypeStr = null;
             super.onDataConnectionStateChanged(state, networkType);
             switch(telephon_manager_1.getNetworkType()){
                 case 0: NetTypeStr = "Brak informacji"; break;
