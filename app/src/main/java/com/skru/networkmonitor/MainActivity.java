@@ -16,8 +16,8 @@ public class MainActivity extends Activity {
     TextView                        network_type_value;
     TextView                        imei_1_value;
 
-    SignalPhoneStateListener1       signal_listener1;
-    NetworkPhoneStateListener1      network_listener1;
+    SignalPhoneStateListener        signal_listener1;
+    NetworkPhoneStateListener       network_listener1;
 
     TelephonyManager                telephon_manager_1;
 
@@ -30,17 +30,18 @@ public class MainActivity extends Activity {
         operator_name_value = (TextView)findViewById(R.id.operator_name_value);
         network_type_value = (TextView)findViewById(R.id.network_type_value);
         imei_1_value = (TextView)findViewById(R.id.imei_1_value);
-        signal_listener1 = new SignalPhoneStateListener1();
-        network_listener1 = new NetworkPhoneStateListener1();
+        signal_listener1 = new SignalPhoneStateListener();
+        network_listener1 = new NetworkPhoneStateListener();
 
         telephon_manager_1 = (TelephonyManager)getSystemService(TELEPHONY_SERVICE);
 
-        telephon_manager_1.listen(signal_listener1, SignalPhoneStateListener1.LISTEN_SIGNAL_STRENGTHS);
-        telephon_manager_1.listen(network_listener1, NetworkPhoneStateListener1.LISTEN_DATA_CONNECTION_STATE);
-        telephon_manager_1.listen(network_listener1,NetworkPhoneStateListener1.LISTEN_SERVICE_STATE);
+        telephon_manager_1.listen(signal_listener1, SignalPhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
+        telephon_manager_1.listen(network_listener1, NetworkPhoneStateListener.LISTEN_DATA_CONNECTION_STATE);
+
 
         operator_name_value.setText(telephon_manager_1.getNetworkOperatorName());
         imei_1_value.setText(telephon_manager_1.getDeviceId());
+
     }
 
     @Override
@@ -66,7 +67,7 @@ public class MainActivity extends Activity {
     }
 
 
-    private class SignalPhoneStateListener1 extends PhoneStateListener {
+    private class SignalPhoneStateListener extends PhoneStateListener {
         int signalStrengthValue;
 
         @Override
@@ -86,7 +87,9 @@ public class MainActivity extends Activity {
             }
             signal_strenght_dbm.setText(String.valueOf(signalStrengthValue) + " dbm");
         }
+    }
 
+    private class NetworkPhoneStateListener extends  PhoneStateListener{
         public void onDataConnectionStateChanged(int state, int networkType) {
             String NetTypeStr = null;
             super.onDataConnectionStateChanged(state, networkType);
@@ -110,9 +113,5 @@ public class MainActivity extends Activity {
             }
             network_type_value.setText(NetTypeStr);
         }
-    }
-
-    private class NetworkPhoneStateListener1 extends  PhoneStateListener{
-
     }
 }
