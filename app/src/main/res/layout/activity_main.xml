@@ -1,82 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:id="@+id/layout">
+    android:id="@+id/layout"
+    android:background="#4686b8"
+    android:clickable="false"
+    android:layout_alignParentStart="true">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/signal_strength"
-        android:id="@+id/signal_strenght"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="46dp" />
+        android:text="@string/app_name"
+        android:id="@+id/textView2"
+        android:textColor="#ffffff"
+        android:textSize="35sp" />
 
-    <TextView
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/image_view"
+        android:src="@drawable/app_logo"
+        android:layout_marginStart="31dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/signal_strenght_dbm"
-        android:layout_below="@+id/signal_strenght"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/signal_strenght" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/operator_name"
-        android:id="@+id/operator_name"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/operator_name_value"
-        android:id="@+id/operator_name_value"
-        android:layout_below="@+id/operator_name"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/operator_name" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/network_type"
-        android:id="@+id/network_type"
-        android:layout_below="@+id/signal_strenght_dbm"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/network_type_value"
-        android:layout_below="@+id/network_type"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/network_type" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/imei_1_value"
-        android:layout_below="@+id/textView"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/image_view"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true" >
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/imei_1"
-        android:id="@+id/textView"
-        android:layout_below="@+id/network_type_value"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/imei_1_value" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/image_view"
+        android:layout_alignBottom="@+id/scrollView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/country_name"
+            android:id="@+id/country_name"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/operator_name"
+            android:layout_marginTop="22dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/operator_name"
+            android:id="@+id/operator_name"
+            android:layout_marginEnd="29dp"
+            android:layout_below="@+id/country_name"
+            android:layout_toStartOf="@+id/country_name_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/operator_name_value"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/country_name_value"
+            android:layout_alignStart="@+id/country_name_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/country_name_value"
+            android:textColor="#ffffff"
+            android:layout_marginEnd="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/country_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cell_info"
+            android:id="@+id/cell_info_text"
+            android:layout_alignBottom="@+id/operator_name"
+            android:layout_alignParentStart="true"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/serving_name"
+            android:id="@+id/serving_text"
+            android:layout_alignBaseline="@+id/network_type_value"
+            android:layout_alignBottom="@+id/network_type_value"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/network_type_value"
+            android:layout_below="@+id/cell_info_text"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/rsrp_name"
+            android:id="@+id/rsrp_name"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/network_type_value"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/rsrq_name"
+            android:id="@+id/rsrq_name"
+            android:layout_below="@+id/rsrp_name"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="0dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/rssnr_name"
+            android:id="@+id/rssnr_name"
+            android:layout_below="@+id/rsrq_name"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rsrq_value"
+            android:layout_below="@+id/rsrp_name"
+            android:layout_alignStart="@+id/rssnr_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rssnr_value"
+            android:layout_alignTop="@+id/rssnr_name"
+            android:layout_toEndOf="@+id/serving_text"
+            android:layout_marginStart="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rsrp_value"
+            android:layout_above="@+id/rsrq_value"
+            android:layout_alignStart="@+id/rsrq_value"
+            android:textColor="#07db0b" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/asu_name"
+            android:id="@+id/asu_name"
+            android:layout_above="@+id/rsrq_value"
+            android:layout_alignStart="@+id/network_type_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#07db0b"
+            android:id="@+id/asu_value"
+            android:layout_above="@+id/tac_value"
+            android:layout_toEndOf="@+id/network_type_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Power:"
+            android:id="@+id/power_name"
+            android:layout_alignTop="@+id/power_value"
+            android:layout_toStartOf="@+id/power_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/power_value"
+            android:layout_above="@+id/rsrq_value"
+            android:layout_alignParentEnd="true"
+            android:textColor="#07db0b"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tac_name"
+            android:id="@+id/tac_name"
+            android:layout_alignTop="@+id/rsrq_value"
+            android:layout_alignStart="@+id/asu_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/pci_name"
+            android:id="@+id/pci_name"
+            android:layout_below="@+id/tac_name"
+            android:layout_alignStart="@+id/tac_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/ci_name"
+            android:id="@+id/ci_name"
+            android:layout_above="@+id/pci_name"
+            android:layout_alignStart="@+id/power_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/tac_value"
+            android:layout_above="@+id/pci_value"
+            android:layout_alignStart="@+id/pci_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/pci_value"
+            android:layout_alignTop="@+id/pci_name"
+            android:layout_toEndOf="@+id/network_type_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/ci_value"
+            android:layout_above="@+id/pci_value"
+            android:layout_alignEnd="@+id/power_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/neighbor_name"
+            android:id="@+id/textView5"
+            android:layout_marginTop="18dp"
+            android:layout_below="@+id/rssnr_name"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:id="@+id/neighbor1_network_type_value" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
