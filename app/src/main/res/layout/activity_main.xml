@@ -277,6 +277,299 @@
             android:textColor="#ffffff"
             android:id="@+id/neighbor1_network_type_value" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/rsrp_name"
+            android:id="@+id/rsrp_name1"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/neighbor1_network_type_value"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/rsrq_name"
+            android:id="@+id/rsrq_name1"
+            android:layout_below="@+id/rsrp_name1"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="0dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/rssnr_name"
+            android:id="@+id/rssnr_name1"
+            android:layout_below="@+id/rsrq_name1"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rsrq_value1"
+            android:layout_below="@+id/rsrp_name1"
+            android:layout_alignStart="@+id/rssnr_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rssnr_value1"
+            android:layout_alignTop="@+id/rssnr_name1"
+            android:layout_toEndOf="@+id/serving_text"
+            android:layout_marginStart="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rsrp_value1"
+            android:layout_above="@+id/rsrq_value1"
+            android:layout_alignStart="@+id/rsrq_value1"
+            android:textColor="#07db0b" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/asu_name"
+            android:id="@+id/asu_name1"
+            android:layout_above="@+id/rsrq_value1"
+            android:layout_alignStart="@+id/network_type_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#07db0b"
+            android:id="@+id/asu_value1"
+            android:layout_above="@+id/tac_value1"
+            android:layout_toEndOf="@+id/network_type_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Power:"
+            android:id="@+id/power_name1"
+            android:layout_alignTop="@+id/power_value1"
+            android:layout_toStartOf="@+id/power_value1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/power_value1"
+            android:layout_above="@+id/rsrq_value1"
+            android:layout_alignParentEnd="true"
+            android:textColor="#07db0b"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tac_name"
+            android:id="@+id/tac_name1"
+            android:layout_alignTop="@+id/rsrq_value1"
+            android:layout_alignStart="@+id/asu_name1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/pci_name"
+            android:id="@+id/pci_name1"
+            android:layout_below="@+id/tac_name1"
+            android:layout_alignStart="@+id/tac_name1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/ci_name"
+            android:id="@+id/ci_name1"
+            android:layout_above="@+id/pci_name1"
+            android:layout_alignStart="@+id/power_name1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/tac_value1"
+            android:layout_above="@+id/pci_value1"
+            android:layout_alignStart="@+id/pci_value1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/pci_value1"
+            android:layout_alignTop="@+id/pci_name1"
+            android:layout_toEndOf="@+id/network_type_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/ci_value2"
+            android:layout_above="@+id/pci_value2"
+            android:layout_alignEnd="@+id/power_value1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_below="@+id/pci_name1"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:id="@+id/neighbor1_network_type_value1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/rsrp_name"
+            android:id="@+id/rsrp_name2"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/neighbor1_network_type_value1"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/rsrq_name"
+            android:id="@+id/rsrq_name2"
+            android:layout_below="@+id/rsrp_name2"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="0dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/rssnr_name"
+            android:id="@+id/rssnr_name2"
+            android:layout_below="@+id/rsrq_name2"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rsrq_value2"
+            android:layout_below="@+id/rsrp_name2"
+            android:layout_alignStart="@+id/rssnr_value2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rssnr_value2"
+            android:layout_alignTop="@+id/rssnr_name2"
+            android:layout_toEndOf="@+id/serving_text"
+            android:layout_marginStart="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rsrp_value2"
+            android:layout_above="@+id/rsrq_value2"
+            android:layout_alignStart="@+id/rsrq_value2"
+            android:textColor="#07db0b" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/asu_name"
+            android:id="@+id/asu_name2"
+            android:layout_above="@+id/rsrq_value2"
+            android:layout_alignStart="@+id/network_type_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#07db0b"
+            android:id="@+id/asu_value2"
+            android:layout_above="@+id/tac_value2"
+            android:layout_toEndOf="@+id/network_type_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Power:"
+            android:id="@+id/power_name2"
+            android:layout_alignTop="@+id/power_value2"
+            android:layout_toStartOf="@+id/power_value2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/power_value2"
+            android:layout_above="@+id/rsrq_value2"
+            android:layout_alignParentEnd="true"
+            android:textColor="#07db0b"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/tac_name"
+            android:id="@+id/tac_name2"
+            android:layout_alignTop="@+id/rsrq_value2"
+            android:layout_alignStart="@+id/asu_name2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/pci_name"
+            android:id="@+id/pci_name2"
+            android:layout_below="@+id/tac_name2"
+            android:layout_alignStart="@+id/tac_name2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/ci_name"
+            android:id="@+id/ci_name2"
+            android:layout_above="@+id/pci_name2"
+            android:layout_alignStart="@+id/power_name2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/tac_value2"
+            android:layout_above="@+id/pci_value2"
+            android:layout_alignStart="@+id/pci_value2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/pci_value2"
+            android:layout_alignTop="@+id/pci_name2"
+            android:layout_toEndOf="@+id/network_type_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/ci_value1"
+            android:layout_above="@+id/pci_value1"
+            android:layout_alignEnd="@+id/power_value1" />
+
     </RelativeLayout>
 
 </RelativeLayout>
