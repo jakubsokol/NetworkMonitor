@@ -40,6 +40,7 @@ public class MainActivity extends Activity {
     TextView                        tac_value;
     TextView                        neighbor1_network_type_value;
     TextView                        pci_name, tac_name, ci_name;
+    TextView                        neighbor_name;
 
     TextView                        rsrq_name1;
     TextView                        rssnr_name1;
@@ -52,7 +53,7 @@ public class MainActivity extends Activity {
     TextView                        ci_value1;
     TextView                        pci_value1;
     TextView                        tac_value1;
-    TextView                        pci_name1, tac_name1, ci_name1;
+    TextView                        pci_name1, tac_name1, ci_name1,asu_name1,power_name1;
 
     TextView                        rsrq_name2;
     TextView                        rssnr_name2;
@@ -65,7 +66,7 @@ public class MainActivity extends Activity {
     TextView                        ci_value2;
     TextView                        pci_value2;
     TextView                        tac_value2;
-    TextView                        pci_name2, tac_name2, ci_name2;
+    TextView                        pci_name2, tac_name2, ci_name2, asu_name2,power_name2;
 
     SignalPhoneStateListener        signal_listener;
     NetworkPhoneStateListener       network_listener;
@@ -110,6 +111,7 @@ public class MainActivity extends Activity {
         pci_name                     = (TextView)findViewById(R.id.pci_name);
         rsrq_name                    = (TextView)findViewById(R.id.rsrq_name);
         rssnr_name                   = (TextView)findViewById(R.id.rssnr_name);
+        neighbor_name                = (TextView)findViewById(R.id.textView5);
 
         rsrp_value1                   = (TextView) findViewById(R.id.rsrp_value1);
         rsrq_value1                   = (TextView) findViewById(R.id.rsrq_value1);
@@ -125,6 +127,8 @@ public class MainActivity extends Activity {
         pci_name1                     = (TextView)findViewById(R.id.pci_name1);
         rsrq_name1                    = (TextView)findViewById(R.id.rsrq_name1);
         rssnr_name1                   = (TextView)findViewById(R.id.rssnr_name1);
+        power_name1                   = (TextView)findViewById(R.id.power_name1);
+        asu_name1                     = (TextView)findViewById(R.id.asu_name1);
 
         rsrp_value2                   = (TextView) findViewById(R.id.rsrp_value2);
         rsrq_value2                   = (TextView) findViewById(R.id.rsrq_value2);
@@ -140,6 +144,8 @@ public class MainActivity extends Activity {
         pci_name2                     = (TextView)findViewById(R.id.pci_name2);
         rsrq_name2                    = (TextView)findViewById(R.id.rsrq_name2);
         rssnr_name2                   = (TextView)findViewById(R.id.rssnr_name2);
+        power_name2                   = (TextView)findViewById(R.id.power_name2);
+        asu_name2                     = (TextView)findViewById(R.id.asu_name2);
 
         signal_listener              = new SignalPhoneStateListener();
         network_listener             = new NetworkPhoneStateListener();
@@ -250,10 +256,12 @@ public class MainActivity extends Activity {
                 }
                 int number_of_cells = telephon_manager_1.getNeighboringCellInfo().size();
                 if(number_of_cells==0){
+                    neighbor_name.setText("");
                     hideTextView(1);
                     hideTextView(2);
                 }
                 if(number_of_cells>0){
+                    neighbor_name.setText("Neighbor:");
                     hideTextView(2);
                     CellInfoWcdma cellInfoWcdma1 = (CellInfoWcdma) cellInfoList.get(1);
                     CellIdentityWcdma cellIdentityWcdma1 = cellInfoWcdma1.getCellIdentity();
@@ -272,7 +280,8 @@ public class MainActivity extends Activity {
                     ci_name1.setText("CID:");
 
                     rsrp_value1.setText(String.valueOf(signalStrengthValue1) + " dbm");
-                    asu_value1.setText(String.valueOf(asuValue));
+                    asu_name1.setText("");
+                    //asu_value1.setText(String.valueOf(asuValue));
                     power_value1.setText(dbmToPower(signalStrengthValue1));
                     rsrq_value1.setText("");
                     rssnr_value1.setText("");
@@ -289,7 +298,7 @@ public class MainActivity extends Activity {
                     int signalStrengthValue2= cellSignalStrengthWcdma2.getDbm();
                     int asuValue2 = cellSignalStrengthWcdma2.getAsuLevel();
 
-                    Log.i("SILA 2",String.valueOf(signalStrengthValue2));
+                    Log.i("SILA 2", String.valueOf(signalStrengthValue2));
 
                     rsrp_name2.setText("RSSI:");
                     rsrq_name2.setText("");
@@ -299,7 +308,8 @@ public class MainActivity extends Activity {
                     ci_name2.setText("CID:");
 
                     rsrp_value2.setText(String.valueOf(signalStrengthValue2) + " dbm");
-                    asu_value2.setText(String.valueOf(asuValue2));
+                    //asu_value2.setText(String.valueOf(asuValue2));
+                    asu_name2.setText("");
                     power_value2.setText(dbmToPower(signalStrengthValue2));
                     rsrq_value2.setText("");
                     rssnr_value2.setText("");
@@ -328,6 +338,7 @@ public class MainActivity extends Activity {
                     pci_name.setText("");
                     ci_name.setText("CID:");
 
+
                     rsrp_value.setText(String.valueOf(signalStrengthValue) + " dbm");
                     asu_value.setText(String.valueOf(cellSignalStrengthGsm.getAsuLevel()));
                     power_value.setText(dbmToPower(signalStrengthValue));
@@ -339,8 +350,12 @@ public class MainActivity extends Activity {
                     ci_value.setText(Integer.toString(cellIdentityGsm.getCid()));
 
                     int number_of_cells = telephon_manager_1.getNeighboringCellInfo().size();
-
-                    if(number_of_cells>1){
+                    if(number_of_cells==0){
+                        neighbor_name.setText("");
+                        hideTextView(1);
+                        hideTextView(2);
+                    }
+                    if(number_of_cells>0){
                         CellInfoGsm  cellInfoGsm1 = (CellInfoGsm) cellInfoList.get(1);
                         CellIdentityGsm cellIdentityGsm1 = cellInfoGsm1.getCellIdentity();
 
@@ -365,7 +380,7 @@ public class MainActivity extends Activity {
                         ci_value1.setText(Integer.toString(cellIdentityGsm1.getCid()));
 
                     }
-                    if(number_of_cells>2){
+                    if(number_of_cells>1){
                         CellInfoGsm  cellInfoGsm2 = (CellInfoGsm) cellInfoList.get(2);
                         CellIdentityGsm cellIdentityGsm2 = cellInfoGsm2.getCellIdentity();
 
@@ -465,6 +480,9 @@ public class MainActivity extends Activity {
             pci_name1.setText("");
             tac_name1.setText("");
             ci_name1.setText("");
+            asu_name1.setText("");
+            power_name1.setText("");
+
         }else if(index==2){
             rsrq_name2.setText("");
             rssnr_name2.setText("");
@@ -480,6 +498,8 @@ public class MainActivity extends Activity {
             pci_name2.setText("");
             tac_name2.setText("");
             ci_name2.setText("");
+            asu_name2.setText("");
+            power_name2.setText("");
         }
 
     }
